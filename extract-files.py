@@ -26,6 +26,21 @@ namespace_imports = [
 
 blob_fixups: blob_fixups_user_type = {
     (
+        'vendor/lib64/libsnapdragoncolor-manager.so',
+        'vendor/lib64/libdpps.so',
+        'vendor/lib64/camx.device@3.4-ext-impl.so',
+        'vendor/lib64/camx.provider@2.7-legacy.so',
+        'vendor/lib64/camx.provider@2.5-external.so',
+        'vendor/lib64/camx.device@3.5-ext-impl.so',
+        'vendor/lib64/camx.provider@2.5-legacy.so',
+        'vendor/lib64/camx.provider@2.4-external.so',
+        'vendor/lib64/camx.provider@2.4-impl.so',
+        'vendor/lib64/camx.provider@2.4-legacy.so',
+        'vendor/lib64/camx.provider@2.6-legacy.so',
+        'vendor/lib64/camx.device@3.6-ext-impl.so'
+    ): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
+    (
         'vendor/etc/camera/cupid_enhance_motiontuning.xml',
         'vendor/etc/camera/cupid_motiontuning.xml',
     ): blob_fixup().regex_replace('xml=version', 'xml version'),
